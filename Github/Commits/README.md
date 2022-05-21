@@ -41,6 +41,11 @@ Caso queira saber mais sobre: https://udacity.github.io/git-styleguide/
 ```bash
 git commit -m ":tada: Meu primeiro commit"
 ```
+Mesmo com 50 caracteres podemos as vezes precisar de mais espaço pra descrever nossas alterações, dessa forma você pode utlizar de um -m adicional:
+
+```bash
+git commit -m ":tada: Meu primeiro commit" -m "Minha primeira descrição"
+```
 
 ## 💈 Padrões de emojis
 
