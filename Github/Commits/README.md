@@ -26,6 +26,8 @@ O commit semântico possui os elementos estruturais abaixo (tipos), que informam
 
 -   `chore` - Commits do tipo chore indicam atualizações de tarefas de build, configurações de administrador, pacotes... como por exemplo adicionar um pacote no gitignore. (Não inclui alterações em código)
 
+Caso queira saber mais sobre: https://udacity.github.io/git-styleguide/
+
 ## 🎉 Recomendações
 
 -   Adicione um título consistente com o título do conteúdo;
