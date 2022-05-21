@@ -125,6 +125,8 @@ git commit -m ":tada: Meu primeiro commit"
   </tbody>
 </table>
 
+for more check https://www.webfx.com/tools/emoji-cheat-sheet/
+
 <br>[⬆ Voltar ao top](#padrões-de-commits-) <br>
 
 ---
