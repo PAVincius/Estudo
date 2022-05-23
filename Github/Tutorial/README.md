@@ -1,2 +1,2 @@
-## Straight forward Tutorial ([HERE](https://rogerdudler.github.io/git-guide/index.pt_BR.html)
+## Straight forward Tutorial [HERE](https://rogerdudler.github.io/git-guide/index.pt_BR.html)
 
