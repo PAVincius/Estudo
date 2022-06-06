@@ -1,6 +1,9 @@
+import {useTheme} from 'next-themes'
 import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
+
+import  Logo  from '../../../public/svg/Logo.svg'
 
 const links = [
   { href: '/', label: 'Route 1' },
@@ -8,23 +11,21 @@ const links = [
 ];
 
 export default function Header() {
+  const {theme, setTheme} = useTheme()
   return (
-    <header className='sticky top-0 z-50 light:bg-primary-50 dark:bg-dark'>
+    <header className='sticky top-0 z-50 dark:#383838 light:#fafafa'>
       <div className='layout flex h-14 items-center justify-between'>
         <UnstyledLink href='/' className='font-bold hover:text-gray-600'>
-          Home
+          Learning Next.js
         </UnstyledLink>
-        <nav>
-          <ul className='flex items-center justify-between space-x-4'>
-            {links.map(({ href, label }) => (
-              <li key={`${href}${label}`}>
-                <UnstyledLink href={href} className='hover:text-gray-600'>
-                  {label}
-                </UnstyledLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Logo width='5rem' height='5rem'/>
+        <button
+          aria-label="Toggle Dark Mode"
+          type="button"
+          className=" py-2 rounded-md text-sm"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >Toggle to {theme === 'dark' ? 'light' : 'dark'}
+        </button>
       </div>
     </header>
   );

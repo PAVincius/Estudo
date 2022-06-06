@@ -12,15 +12,13 @@ import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
 export default function HomePage() {
-
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
       <Header/>
       <main>
-       <div className="dark:bg-dark light:bg-neutral-50">
-        
+       <div className="dark:bg-dark light:bg-neutral-50 flex-row w-screen h-screen m-20 grid grid-cols-4 gap-4 place-content-center place-self-auto">
        </div>
       </main>
     </Layout>
