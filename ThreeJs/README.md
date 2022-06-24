@@ -69,7 +69,7 @@ camera.position.z = 3 //here we are aligned to the cube, if you want to check if
 //camera.position.y = 1
 scene.add(camera)
 ```
-####A Renderer:
+<h4>A Renderer:</h4>
 
 ```js
 const renderer = new THREE.WebGLRenderer({
@@ -82,4 +82,4 @@ Set the sizes of the renderer
 ```js
 renderer.setSize(sizes.widht, sizes.height)
 ```
-#Congrats, it's your first step into threejs 
+<h1>Congrats, it's your first step into threejs</h1>
