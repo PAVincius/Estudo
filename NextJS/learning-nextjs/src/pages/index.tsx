@@ -14,20 +14,19 @@ import Header from '@/components/layout/Header';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-export async function getStaticProps() {
+export async function getServerProps() {
   const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL || '',
     process.env.SUPABASE_SERVICE_ROLE_KEY || ''
   )
-
   const { data } = await supabaseAdmin.from('images').select('*').order('id')
   return {
     props: {
       images: data,
+      date: new Date().toISOString(),
     },
   }
 }
-
 
 type Image = {
   id: number
@@ -37,12 +36,17 @@ type Image = {
   likes: number
 }
 
-export default function HomePage({ images }: { images: Image[] }) {
+type Date = {
+ date: string
+}
+
+export default function HomePage({ images, date }: { images: Image[], date: Date }) {
   return (
     <Layout>
       {/* <Seo templateTitle='Home' /> */}
       <Seo />
       <Header/>
+        <h1>{date}</h1>
         <div className="m-4">
           <div className="grid grid-cols-1 gap-y-10 gap-x-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-6">
             {images.map((image) => (

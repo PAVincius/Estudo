@@ -37,8 +37,8 @@ export default function Card({ image }: { image: Image }) {
               : 'scale-100 blur-0 grayscale-0'
           )}
           onLoadingComplete={() => setLoading(false)}/>
-        <div className="absolute m-4 inset-0 z-10 flex">
-          <h3 className="mt-2 text-white text-center self-center">{image.title}</h3>
+        <div className="absolute m-4 inset-0 z-10 flex ">
+          <h3 className="mt-2 text-white text-center self-center ">{image.title}</h3>
         </div>
         <div className="absolute bg-pink-900 w-1/3 rounded-br-lg rounded-tl-lg a">
             <p className="mx-auto text-lg font-medium text-white">{image.likes}</p>
