@@ -1,8 +1,9 @@
-#What's Three.Js ?
+<h1>What's Three.Js ?</h1>
 
-####Three.js is a 3D Javascript library that enables developers to create 3D experience for the web. It works with WebGL, but you can also make ir work with SVG and CSS but those two are quite limited.
+<h3>Three.js is a 3D Javascript library that enables developers to create 3D experience for the web. It works with WebGL, but you can also make ir work with SVG and CSS but those two are quite limited.</h3>
 
-#What's WebGL?
+
+<h1>What's WebGL?</h1>
 
 - Javascript API
 - Render triangles really fast
@@ -10,15 +11,15 @@
 - Use the GPU
 - Can be used for 2D but focus on 3D
 
-#How to start using Three.js?
+<h1>How to start using Three.js?</h1>
 
-####We need a scene:
+<h4>We need a scene:</h4>
 
 ```js
 const scene = new THREE.Scene());
 ```
 
-####A Object:
+<h4>A Object:</h4>
 
 To creat a object we first need to create a [Mesh](https://threejs.org/docs/#api/en/objects/Mesh) which is composed by a geometry 
 
@@ -42,7 +43,7 @@ Last but not least, add the mesh to the scene
 ```js
 scene.add(mesh); //add a mesh to scene
 ```
-####A Camera:
+<h4>A Camera:</h4>
 
 In this example we'll use a PerspectiveCamera and add ir to the scene
 
