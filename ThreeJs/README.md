@@ -83,3 +83,4 @@ Set the sizes of the renderer
 renderer.setSize(sizes.widht, sizes.height)
 ```
 <h1>Congrats, it's your first step into threejs</h1>
+
