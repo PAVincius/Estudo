@@ -76,7 +76,6 @@ const renderer = new THREE.WebGLRenderer({
     canvas: canvas
 })
 ```
-
 Set the sizes of the renderer
 
 ```js
@@ -84,3 +83,48 @@ renderer.setSize(sizes.widht, sizes.height)
 ```
 <h1>Congrats, it's your first step into threejs</h1>
 
+<hr/>
+
+<h1>More about Objects</h1>
+
+<h4>Position</h4>
+
+We can change the position of the Object in two ways.
+
+The first way is to change the position of every axis individually.
+
+
+```js
+mesh.position.x = 1
+mesh.position.y = 2
+mesh.position.z = 3
+```
+
+the other way is to use the `mesh.position.set`, to, as it suggest, set the values of the axis in one shot.
+
+```js
+mesh.position.set(1, 2, 3)
+```
+<h4>Scale</h4>
+
+Similarly to the Position, we can change the scale of a mesh by using:
+
+```js
+mesh.scale.x = 1
+mesh.scale.y = 2
+mesh.scale.z = 3
+```
+or
+
+```js
+mesh.scale.set(1, 2, 3)
+```
+<h4>Rotation</h4>
+
+To set the rotation of the object, we need to care of the constant PI multiplied by some number.
+
+```js
+mesh.rotation.x = Math_PI * 1
+mesh.rotation.y = Math_PI * 2
+mesh.rotation.z = Math_PI * 3
+```
