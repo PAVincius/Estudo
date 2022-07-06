@@ -8,10 +8,10 @@ import * as dat from 'dat.gui'
  * Base
  */
 const parameters = {
-    color: 0xff0000,
+    color: 0xc3c3c3,
     spin: () =>
     {
-        gsap.to(mesh.rotation, 1, { y: mesh.rotation.y + Math.PI * 2 })
+        gsap(mesh.rotation, 1, { y: mesh.rotation.y + Math.PI * 2 })
     }
 }
 
@@ -24,8 +24,11 @@ const scene = new THREE.Scene()
 /**
  * Object
  */
-const geometry = new THREE.BoxBufferGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
+const material = new THREE.MeshStandardMaterial({ color: 0xFAFAFA })
+const geometry = new THREE.SphereBufferGeometry(0.5, 32, 32)
+
+material.metalness = 0.45
+material.roughness = 0.45
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
@@ -51,6 +54,26 @@ window.addEventListener('resize', () =>
     renderer.setSize(sizes.width, sizes.height)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
+
+/**
+ * Light
+ */
+
+  const ambientLight = new THREE.AmbientLight()
+  ambientLight.color = new THREE.Color(0xFAFAFA)
+  ambientLight.intensity = 0.1
+  scene.add(ambientLight);
+
+//   const diretionalLight = new THREE.DirectionalLight(0xffffdf, 0.5)
+//   scene.add(diretionalLight)
+
+  const hemisphereLight = new THREE.HemisphereLight(0xB1DBDB,0xECB193, 2)
+  hemisphereLight.position.set(1, 0.25, 0)
+  scene.add(hemisphereLight) 
+//  const pointLight = new THREE.PointLight(0xffffff, 1, 0.5)
+//  light.position.set( 2, 3, 4 );
+
+//  scene.add(pointLight);
 
 /**
  * Camera
@@ -81,9 +104,8 @@ const gui = new dat.GUI({
     width: 400
 })
 // gui.hide()
-gui.add(mesh.position, 'y').min(- 3).max(3).step(0.01).name('elevation')
-gui.add(mesh, 'visible')
-gui.add(material, 'wireframe')
+gui.add(material, 'metalness').min(0).max(1).step(0.0001)
+gui.add(material, 'roughness').min(0).max(1).step(0.0001)
 
 gui
     .addColor(parameters, 'color')
