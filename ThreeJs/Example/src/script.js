@@ -25,12 +25,12 @@ const scene = new THREE.Scene()
  * Object
  */
 const material = new THREE.MeshStandardMaterial({ color: 0xFAFAFA })
-const geometry = new THREE.SphereBufferGeometry(0.5, 32, 32)
+const geometry = new THREE.SphereBufferGeometry(0.5, 64, 32 )
 
 material.metalness = 0.45
 material.roughness = 0.45
-const mesh = new THREE.Mesh(geometry, material)
-scene.add(mesh)
+const sphere = new THREE.Mesh(geometry, material)
+scene.add(sphere)
 
 /**
  * Sizes
@@ -61,17 +61,25 @@ window.addEventListener('resize', () =>
 
   const ambientLight = new THREE.AmbientLight()
   ambientLight.color = new THREE.Color(0xFAFAFA)
-  ambientLight.intensity = 0.1
+  ambientLight.intensity = 0.2
   scene.add(ambientLight);
 
-//   const diretionalLight = new THREE.DirectionalLight(0xffffdf, 0.5)
+//   const diretionalLight = new THREE.DirectionalLight(0xB1DBDB, 0.5)
+//     directionalLight.position.set(1, 0.25, 0)
 //   scene.add(diretionalLight)
+
+//   const diretionalLight2 = new THREE.DirectionalLight(0xECB193, 0.5)
+//     directionalLight2.position.set(-1, 0.25, 0)
+//   scene.add(diretionalLight2)
 
   const hemisphereLight = new THREE.HemisphereLight(0xB1DBDB,0xECB193, 2)
   hemisphereLight.position.set(1, 0.25, 0)
-  scene.add(hemisphereLight) 
-//  const pointLight = new THREE.PointLight(0xffffff, 1, 0.5)
-//  light.position.set( 2, 3, 4 );
+  scene.add(hemisphereLight)
+
+  const pointLight = new THREE.PointLight(0xffffff, 1, 0.5)
+  pointLight.position.set( 2, 3, 4 );
+  scene.add(pointLight)
+ 
 
 //  scene.add(pointLight);
 
@@ -124,6 +132,9 @@ const clock = new THREE.Clock()
 const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime()
+
+    //Bounce Animation
+    sphere.position.y = Math.sin(elapsedTime) * .05
 
     // Update controls
     controls.update()
