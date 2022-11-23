@@ -1,0 +1,1 @@
+https://medium.com/mindorks/what-is-feature-engineering-for-machine-learning-d8ba3158d97a#:~:text=Feature%20engineering%20is%20the%20process%20of%20using%20domain,data%20that%20help%20facilitate%20the%20machine%20learning%20process.
