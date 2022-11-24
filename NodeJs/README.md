@@ -6,7 +6,3 @@ Aqui você encontra conteúdo sobre projetos `NodeJs`.
 
 - **MongoDB**
 - **Express**
-
----
-
-_by Matheus Ishiyama_
