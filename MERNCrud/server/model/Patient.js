@@ -1,11 +1,8 @@
 const mongoose = require('mongoose')
 
+const {medicalRecordSchema} = require('./MedicalRecord')
+
 const PatientSchema = new mongoose.Schema({
-    id : {
-        type : String,
-        required : true,
-        unique: true,
-    },
     serviceType : {
         type : String,
         required : true
@@ -19,8 +16,8 @@ const PatientSchema = new mongoose.Schema({
         required : true
     },
     medicalRecord: {
-        type: Object,
-        
+        type: medicalRecordSchema,
+        required : true
     },
     updated: { type: Date, default: Date.now },
 
