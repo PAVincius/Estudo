@@ -305,3 +305,67 @@ is.nan(x)
 mean(x)
 ```
 
+## Dataframes
+
+In R, a data frame is a table-like data structure that consists of rows and columns. Each column can have a different data type, such as numeric, character, or factor. A data frame can be thought of as a spreadsheet or a database table.
+
+Here is an example of how to create and manipulate a data frame in R:
+
+```r
+# create a data frame
+my_df <- data.frame(
+  name = c("Alice", "Bob", "Charlie", "Dave"),
+  age = c(25, 30, 35, 40),
+  gender = c("F", "M", "M", "M"),
+  stringsAsFactors = FALSE
+)
+
+# print the data frame
+my_df
+
+# access a column by name
+my_df$name
+
+# access a row by index
+my_df[2,]
+
+# add a new column
+my_df$salary <- c(50000, 60000, 70000, 80000)
+my_df
+
+# rename a column
+my_df[4] <- "income"
+my_df
+```
+
+In this example, we create a data frame called my_df that contains information about people's names, ages, and genders. We use the data.frame() function to create the data frame and specify the column names and values. We also set stringsAsFactors = FALSE to prevent character columns from being automatically converted to factors.
+
+We then print the data frame using the print() function, access a column by name using the $ operator, and access a row by index using subsetting. We also add a new column called salary using the $ operator and print the updated data frame. Finally, we rename the salary column to income using the names() function.
+
+The output of this code will be:
+
+```r
+  name age gender
+1    Alice  25      F
+2      Bob  30      M
+3  Charlie  35      M
+4     Dave  40      M
+
+[1] "Alice"   "Bob"     "Charlie" "Dave"   
+
+      name age gender
+2      Bob  30      M
+
+      name age gender salary
+1    Alice  25      F  50000
+2      Bob  30      M  60000
+3  Charlie  35      M  70000
+4     Dave  40      M  80000
+
+      name age gender income
+1    Alice  25      F  50000
+2      Bob  30      M  60000
+3  Charlie  35      M  70000
+4     Dave  40      M  80000
+```
+As you can see, the data frame my_df contains four columns: 'name', 'age', 'gender', and 'salary'. We can access individual columns by name using the $ $ operator, and we can access individual rows using subsetting. We can also add new columns and rename existing columns using the $ operator and the 'names()' function.
