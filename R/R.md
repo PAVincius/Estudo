@@ -369,3 +369,77 @@ The output of this code will be:
 4     Dave  40      M  80000
 ```
 As you can see, the data frame my_df contains four columns: 'name', 'age', 'gender', and 'salary'. We can access individual columns by name using the $ $ operator, and we can access individual rows using subsetting. We can also add new columns and rename existing columns using the $ operator and the 'names()' function.
+
+## Control Structures
+
+### if-else
+
+In R, control structures are used to control the flow of execution in a program. One of the most common control structures is the if-else statement, which allows you to perform different actions based on whether a condition is true or false.
+
+Here is an example of how to use the if-else statement in R:
+
+```r
+# define a variable
+x <- 5
+
+# use if-else to check the value of x
+if (x > 10) {
+  print("x is greater than 10")
+} else {
+  print("x is less than or equal to 10")
+}
+```
+
+you can also right a if-else structure in this way:
+
+```r
+y <- if(x>10){
+  10
+} else {
+  0
+}
+```
+This way may be easier to read because you can se that all the if statment is to assign a value to y.
+
+### for
+
+In R, a 'for' loop is a control structure that allows you to execute a block of code repeatedly for a specified number of iterations. The general syntax of a 'for' loop in R is as follows:
+
+```r
+# loop through the values 1 to 5
+for (i in 1:5) {
+  print(i)
+}
+
+# or
+
+# loop through the sequence 0 to 1 by increments of 0.1
+for (x in seq(0, 1, by = 0.1)) {
+  print(x)
+}
+
+#or
+
+# loop through the values "a" and "b" 5 times each
+for (y in rep(c("a", "b"), times = 5)) {
+  print(y)
+}
+```
+
+In R, you can use nested for loops to perform operations on multiple dimensions of a dataset or perform a set of operations for each combination of two or more variables. The syntax of a nested for loop is similar to that of a regular for loop, but with an additional level of looping.
+
+Here is an example of a simple nested for loop in R:
+
+```r
+# create a 2D matrix
+mat <- matrix(1:9, nrow = 3, ncol = 3)
+
+# loop through the rows of the matrix
+for (i in 1:nrow(mat)) {
+  # loop through the columns of the matrix
+  for (j in 1:ncol(mat)) {
+    # print the value at the current row and column
+    print(mat[i, j])
+  }
+}
+```
